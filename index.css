@@ -1,0 +1,200 @@
+@font-face {
+    font-family: comic-sans;
+    src: url(./fonts/comic-sans.ttf);
+}
+@font-face {
+    font-family: consola;
+    src: url(./fonts/consola.ttf);
+}
+@font-face {
+    font-family: Opensans;
+    src: url(./fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: SourceCode;
+    src: url(./fonts/SourceSansPro-Regular.ttf);
+}
+@font-face {
+  font-family: iransans;
+  src: url(./fonts/IRANSansXNoEn-Regular.ttf);
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: SourceCode,Opensans,sans-serif;
+    background-color: #000020;
+    color: white;
+    position: relative;
+}
+
+#memory_game_start_game{
+    background-color: #000020;
+    color: white;
+    padding: 20px;
+}
+
+.m_g_Diff_choose_container{
+    display: block;
+    margin: auto;
+    width: fit-content;
+    border: 2px solid #ffce26;
+    padding-bottom: 40px;
+}
+
+.memory_game_diff_text{
+    font-size: 27px;
+    margin-left: 14px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.memory_button_choose_diff_disabled , .memory_button_choose_diff_enabled{
+    padding: 15px 25px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 14px;
+    transition: 0.3s all;
+    position: relative;
+    font-size: 18px;
+    appearance: none;
+    border: none;
+    box-shadow: 0 0 10px #000090;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+}
+
+.memory_button_choose_diff_enabled{
+    cursor: default;
+    background-color: #000080;
+    color: white;
+}
+
+.memory_diff_choose_border{
+    width: 100%;
+    height: 2px;
+    background-color: #ffce26;
+}
+
+#memory_game_diff_shower , #memory_game_winShow , #memory_game_Theme_Show , #memory_game_LoseShow , #memory_game_FlipShow{
+    font-size: 27px;
+    margin-left: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#memory_game_play_button , #memory_game_playAgain_button , #memory_game_Exit_button{
+    text-align: center;
+    display: block;
+    margin: auto;
+    appearance: none;
+    border: none;
+    padding: 20px 30px;
+    font-size: 20px;
+    background-color: #ffce26;
+    box-shadow: 0 0 18px #ffb300;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+#memory_game_playAgain_button , #memory_game_Exit_button{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    display: none;
+}
+#memory_game_play_button:hover , #memory_game_playAgain_button:hover , #memory_game_Exit_button:hover{
+    box-shadow: 0 0 25px #ffb300;
+}
+
+#memory_game_the_game{
+    padding: 20px;
+    background-color: #000020;
+}
+
+
+.Memory_game_PLAY_IMAGE_CONTAINER{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.Memoey_game_PLAY_IMAGE{
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+
+.Memoey_game_PLAY_IMAGE img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s all;
+    image-rendering: pixelated;
+    opacity: 0;
+}
+
+#Memory_Game_Timer_Lose_Win_Shower , #memoey_game_flip_counter{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+@keyframes memory_game_shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @keyframes memory_game_right {
+    0%{border: 2px solid blue;}
+    100%{border: 5px solid lime;}
+  }
+
+
+@media only screen and (max-width:1250px)
+{
+    .Memoey_game_PLAY_IMAGE{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width:750px)
+{
+    .Memoey_game_PLAY_IMAGE{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width:500px)
+{
+    .Memoey_game_PLAY_IMAGE{
+        width: 60px;
+        height: 60px;
+    }
+}

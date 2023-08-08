@@ -1,0 +1,38 @@
+<html>
+    <head>
+    <title>kasra071 - Memory Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" href="./icon.png">
+    <meta charset="UTF-8">
+    <script src="./index.js" defer></script>
+
+</head>
+<body>
+
+    <div id="memory_game_start_game">
+        <h1 class="Game_Title_GCG">Memory Game</h1>
+        <h2 class="Game_dec_GCG">Find The Same Cards</h2>
+        <div class="m_g_Diff_choose_container">
+            <span class="memory_game_diff_text">choose difficulty : </span>
+            <button id="memory_game_diff_btn_VE" class="memory_button_choose_diff_disabled" onclick="Memoey_Game_Change_Diff(1)">Very Easy</button>
+            <button id="memory_game_diff_btn_E" class="memory_button_choose_diff_disabled" onclick="Memoey_Game_Change_Diff(2)">Easy</button>
+            <button id="memory_game_diff_btn_N" class="memory_button_choose_diff_enabled" onclick="Memoey_Game_Change_Diff(3)">Normal</button>
+            <button id="memory_game_diff_btn_H" class="memory_button_choose_diff_disabled" onclick="Memoey_Game_Change_Diff(4)">Hard</button>
+            <button id="memory_game_diff_btn_VH" class="memory_button_choose_diff_disabled" onclick="Memoey_Game_Change_Diff(5)">Very Hard</button>
+            <span class="memory_game_diff_text">choose theme : </span>
+            <button id="memory_game_theme_btn_PL" class="memory_button_choose_diff_enabled" onclick="Memoey_Game_Theme_Change(0)">programming languages</button>
+            <button id="memory_game_theme_btn_CI" class="memory_button_choose_diff_disabled" onclick="Memoey_Game_Theme_Change(1)">Cryptocurrency Icons</button>
+            <div class="memory_diff_choose_border"></div>
+            <span id="memory_game_diff_shower">cards : 22</span>
+            <span id="memory_game_Theme_Show">theme : programming languages</span>
+            <button onclick="Memory_Game_Play()" id="memory_game_play_button">Play</button>
+        </div>
+    </div>
+
+    <div id="memory_game_the_game">
+
+    </div>
+
+</body></html>
