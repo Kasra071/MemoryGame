@@ -16,82 +16,58 @@ function Memory_Game_Onload()
 {
 
     scrollToTop()
-    Memoey_Game_Change_Diff(3)
-    Memoey_Game_Theme_Change(0)
+    Memoey_Game_Change_Diff(3,document.getElementById('DF'))
+    Memoey_Game_Theme_Change(0,document.getElementById('PT'))
 
     
 }
 
-function Memoey_Game_Change_Diff(n)
+function Memoey_Game_Change_Diff(n,element)
 {
-    var veryeasy =  document.getElementById('memory_game_diff_btn_VE')
-    var normal =  document.getElementById('memory_game_diff_btn_N')
-    var easy =  document.getElementById('memory_game_diff_btn_E')
-    var hard = document.getElementById('memory_game_diff_btn_H')
-    var veryhard =  document.getElementById('memory_game_diff_btn_VH')
+    let AllElements = document.querySelectorAll('.memory_game_choose_difff')
+    AllElements.forEach(elem=>{
+        elem.classList.remove('diff_active')
+    })
+    element.classList.add('diff_active')
 
     switch(n)
     {
         case 1:
-            veryeasy.className="memory_button_choose_diff_enabled"
-            normal.className="memory_button_choose_diff_disabled"
-            easy.className="memory_button_choose_diff_disabled"
-            hard.className="memory_button_choose_diff_disabled"
-            veryhard.className="memory_button_choose_diff_disabled"
             memory_game_card_count = 8;
             break;
         case 2:
-            veryeasy.className="memory_button_choose_diff_disabled"
-            normal.className="memory_button_choose_diff_disabled"
-            easy.className="memory_button_choose_diff_enabled"
-            hard.className="memory_button_choose_diff_disabled"
-            veryhard.className="memory_button_choose_diff_disabled"
             memory_game_card_count = 14;
             break
         case 3:
-            veryeasy.className="memory_button_choose_diff_disabled"
-            normal.className="memory_button_choose_diff_enabled"
-            easy.className="memory_button_choose_diff_disabled"
-            hard.className="memory_button_choose_diff_disabled"
-            veryhard.className="memory_button_choose_diff_disabled"
             memory_game_card_count = 22;
             break
         case 4:
-            veryeasy.className="memory_button_choose_diff_disabled"
-            normal.className="memory_button_choose_diff_disabled"
-            easy.className="memory_button_choose_diff_disabled"
-            hard.className="memory_button_choose_diff_enabled"
-            veryhard.className="memory_button_choose_diff_disabled" 
             memory_game_card_count = 28;
             break
         case 5:
-            veryeasy.className="memory_button_choose_diff_disabled"
-            normal.className="memory_button_choose_diff_disabled"
-            easy.className="memory_button_choose_diff_disabled"
-            hard.className="memory_button_choose_diff_disabled"
-            veryhard.className="memory_button_choose_diff_enabled"  
             memory_game_card_count = 32;
             break
     }
     memory_game_card_count_show.textContent=`cards : ${memory_game_card_count}`
 }
 
-function Memoey_Game_Theme_Change(n)
+function Memoey_Game_Theme_Change(n,element)
 {
-    var PL = document.getElementById('memory_game_theme_btn_PL');
-    var CI = document.getElementById('memory_game_theme_btn_CI');
+    let AllElements = document.querySelectorAll('.memory_game_choose_theme')
+    AllElements.forEach(elem=>{
+        elem.classList.remove('theme_active')
+    })
+    element.classList.add('theme_active')
+
+
     var themeFolderNameShow;
     switch(n)
     {
         case 0:
-            PL.className = 'memory_button_choose_diff_enabled'
-            CI.className = 'memory_button_choose_diff_disabled'
-            ThemeFolderName = 'programming_Languages';
+            ThemeFolderName = 'programming_Languages'
             themeFolderNameShow = 'programming languages';
             break;
         case 1:
-            PL.className = 'memory_button_choose_diff_disabled'
-            CI.className = 'memory_button_choose_diff_enabled'
             ThemeFolderName = 'crypto_coins';
             themeFolderNameShow = 'Cryptocurrency Icons'
             break;
